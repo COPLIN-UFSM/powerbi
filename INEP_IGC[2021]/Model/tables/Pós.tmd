@@ -1,0 +1,199 @@
+table Pós
+	lineageTag: 5b99b7d1-92ee-42ff-8ff6-d72835f9828a
+	ordinal: 3
+
+	partition 'Pós-6055ee76-6cbc-4fe0-9272-29c8d49d27a3' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Excel.Workbook(File.Contents("C:\Users\pccli\Desktop\Conferencia IGC 2021\BI INEP\Pos.xlsx"), null, true),
+			    Programas_Capes_Sheet = Source{[Item="Programas_Capes",Kind="Sheet"]}[Data],
+			    #"Promoted Headers" = Table.PromoteHeaders(Programas_Capes_Sheet, [PromoteAllScalars=true]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"CO_IES", Int64.Type}, {"CO_PROGRAMA", type text}, {"Nota Mestrado", Int64.Type}, {"Matriculados Mestrado", Int64.Type}, {"Nota Doutorado", Int64.Type}, {"Matriculados Doutorado", Int64.Type}}),
+			    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"CO_PROGRAMA"}, V_POSGRAD_CURSOS, {"COD_PROGRAMA"}, "V_POSGRAD_CURSOS", JoinKind.LeftOuter),
+			    #"Expanded V_POSGRAD_CURSOS" = Table.ExpandTableColumn(#"Merged Queries", "V_POSGRAD_CURSOS", {"NIVEL_CURSO", "NOME_PROGRAMA", "MODALIDADE", "NOME_AREA_BASICA", "DESCR_AREA_AVALIACAO", "ID_UNIDADE", "ID_CURSO"}, {"V_POSGRAD_CURSOS.NIVEL_CURSO", "V_POSGRAD_CURSOS.NOME_PROGRAMA", "V_POSGRAD_CURSOS.MODALIDADE", "V_POSGRAD_CURSOS.NOME_AREA_BASICA", "V_POSGRAD_CURSOS.DESCR_AREA_AVALIACAO", "V_POSGRAD_CURSOS.ID_UNIDADE", "V_POSGRAD_CURSOS.ID_CURSO"}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Expanded V_POSGRAD_CURSOS",{{"V_POSGRAD_CURSOS.NIVEL_CURSO", "Nível"}, {"V_POSGRAD_CURSOS.NOME_PROGRAMA", "Programa"}, {"V_POSGRAD_CURSOS.MODALIDADE", "Modalidade"}, {"V_POSGRAD_CURSOS.NOME_AREA_BASICA", "AREA"}, {"V_POSGRAD_CURSOS.DESCR_AREA_AVALIACAO", "DESCR_AREA_AVALIACAO"}, {"V_POSGRAD_CURSOS.ID_UNIDADE", "ID_UNIDADE"}, {"V_POSGRAD_CURSOS.ID_CURSO", "ID_CURSO"}})
+			in
+			    #"Renamed Columns"
+
+	column CO_IES
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: a3e42f84-f6f7-4f35-8e43-bdbad70f7876
+		sourceColumn: CO_IES
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column CO_PROGRAMA
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: ef774869-8845-40d7-8f46-3c364bb7bae9
+		sourceColumn: CO_PROGRAMA
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column 'Nota Mestrado'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 73cd47c7-6482-4ce5-af77-efbbf3ba4cc4
+		sourceColumn: "Nota Mestrado"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Matriculados Mestrado'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: cc3de0ea-fe50-4d1e-b6f8-86c68d00b5a5
+		sourceColumn: "Matriculados Mestrado"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nota Doutorado'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 4fd4aa71-9217-4945-98e2-42465c8f5d58
+		sourceColumn: "Nota Doutorado"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Matriculados Doutorado'
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 722a9640-70a7-4f65-b900-468aba1b9a66
+		sourceColumn: "Matriculados Doutorado"
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nível
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: b16e941a-b464-4927-a956-6481b7b1ff31
+		sourceColumn: Nível
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Programa
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 29aafaac-0320-464e-bcd4-34d973265466
+		sourceColumn: Programa
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modalidade
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 0d622141-5393-4f76-ad15-a82ee214ac28
+		sourceColumn: Modalidade
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREA
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: ee3571d1-60b3-4162-b632-361dd379bbf1
+		sourceColumn: AREA
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCR_AREA_AVALIACAO
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 6bb5787a-edbd-4ad5-9426-52e2b0e4de64
+		sourceColumn: DESCR_AREA_AVALIACAO
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_UNIDADE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 9f465435-1306-4b00-ad2e-e9397c192ee4
+		sourceColumn: ID_UNIDADE
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column ID_CURSO
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: d2de8141-f30d-4f48-b556-8204af36acc7
+		sourceColumn: ID_CURSO
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column 'Matrícula Equivalente' =
+		
+		    if('Pós'[Nível]=="Doutorado" || 'Pós'[Nível]=="Doutorado profissional",
+		                            SWITCH(TRUE(),
+		                                'Pós'[Nota Doutorado]==3, 1*'Pós'[Matriculados Doutorado],
+		                                'Pós'[Nota Doutorado]==4, 2*'Pós'[Matriculados Doutorado],
+		                                'Pós'[Nota Doutorado]==5, 3*'Pós'[Matriculados Doutorado],
+		                                'Pós'[Nota Doutorado]==6, 4*'Pós'[Matriculados Doutorado],
+		                                'Pós'[Nota Doutorado]==7, 5*'Pós'[Matriculados Doutorado],
+		                                BLANK()
+		                            ),
+		                            SWITCH(TRUE(),
+		                                'Pós'[Nota Mestrado]==3, 1*'Pós'[Matriculados Mestrado],
+		                                'Pós'[Nota Mestrado]==4, 2*'Pós'[Matriculados Mestrado],
+		                                'Pós'[Nota Mestrado]==5 || 'Pós'[Nota Mestrado]==6 || 'Pós'[Nota Mestrado]==7, 3*'Pós'[Matriculados Mestrado],
+		                                BLANK()
+		                            )
+		    )
+		dataType: Int64
+		formatString:= 0
+		lineageTag: 2b5c2837-170d-4d8c-901d-c1c74a2e0c70
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Conceito Equivalente' =
+		
+		    SWITCH(TRUE(),
+		            'Pós'[Nota Doutorado]==3 || 'Pós'[Nota Mestrado]==3, 4,
+		            'Pós'[Nota Doutorado]==4 || 'Pós'[Nota Mestrado]==4, 4.5,
+		            'Pós'[Nota Doutorado]==5 || 'Pós'[Nota Mestrado]==5 || 'Pós'[Nota Doutorado]==6 || 'Pós'[Nota Mestrado]==6 || 'Pós'[Nota Doutorado]==7 || 'Pós'[Nota Mestrado]==7, 5,
+		            BLANK()
+		        )
+		dataType: Double
+		lineageTag: 00781dcf-1d71-4014-bf4c-a23b1a2400ef
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

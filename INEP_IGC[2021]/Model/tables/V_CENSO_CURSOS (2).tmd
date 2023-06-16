@@ -1,0 +1,348 @@
+table 'V_CENSO_CURSOS (2)'
+	isHidden
+	lineageTag: 9c7a1ae1-032f-4190-80ad-791ee0673ec1
+	ordinal: 4
+
+	partition 'V_CENSO_CURSOS (2)-16357d01-b9b7-492c-8946-a460b9c5fe63' = M
+		mode: Import
+		expression:=
+			let
+			    Source = DB2.Database("192.168.40.25", "bee", [HierarchicalNavigation=true, Implementation="Microsoft"]),
+			    BEE = Source{[Schema="BEE"]}[Data],
+			    V_CENSO_CURSOS1 = BEE{[Name="V_CENSO_CURSOS"]}[Data]
+			in
+			    V_CENSO_CURSOS1
+
+	column COD_CURSO
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: c2476006-d6f5-4680-a459-38984df7d259
+		sourceColumn: COD_CURSO
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column NOME_CURSO
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: f3bd046c-0015-4cbe-8e11-672143e3af6f
+		sourceColumn: NOME_CURSO
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column NOME_CURSO_AJUSTADO
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 5a6cdc17-a0e5-4281-9562-fb4ddf4694a3
+		sourceColumn: NOME_CURSO_AJUSTADO
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column COD_IES
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 3094077a-3c22-47e2-8502-b02c30aa983f
+		sourceColumn: COD_IES
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column COD_MUNICIPIO
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 845c4d28-3aac-4ced-9854-509664186017
+		sourceColumn: COD_MUNICIPIO
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column ID_GRAU_ACADEMICO
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 2edaa601-8d8d-4d5f-ab6a-c16ab85e014f
+		sourceColumn: ID_GRAU_ACADEMICO
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column ID_MODALIDADE_ENSINO
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: b81bc249-27fb-4048-9ba1-717c7d1d9028
+		sourceColumn: ID_MODALIDADE_ENSINO
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column ID_NIVEL_ACADEMICO
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: d300b226-ac44-4494-b1f4-cb4117a2c77b
+		sourceColumn: ID_NIVEL_ACADEMICO
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column ID_ATRIBUTO_INGRESSO
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: fd7c1ce3-e9d9-4c81-b04c-29d46db83751
+		sourceColumn: ID_ATRIBUTO_INGRESSO
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column DT_INICIO_FUNCIONAMENTO
+		dataType: DateTime
+		formatString:= Long Date
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 8741cb6b-763e-47b1-87d7-36f6490b7aa2
+		sourceColumn: DT_INICIO_FUNCIONAMENTO
+		summarizeBy: None
+
+		variation Variation
+			defaultHierarchy: 'LocalDateTable_d414215b-4f67-4104-a214-db597c0f253f'.'Date Hierarchy'
+			isDefault
+			relationship: 'c87c3230-b680-4b75-89a4-def78e5d26f9'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		changedProperty = IsHidden
+
+	column COD_AREA
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 1e1c3f21-c347-4c13-8b33-998fe34af229
+		sourceColumn: COD_AREA
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column TURNO_CURSO
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 2de1175f-ff73-4a75-a96a-f195230c7e77
+		sourceColumn: TURNO_CURSO
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column CC_ANO
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 8231b719-416f-4c43-b1a0-833b4964a0b9
+		sourceColumn: CC_ANO
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column CC_FAIXA
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: f534583a-3d98-4fb2-85e3-0c91dd58e50d
+		sourceColumn: CC_FAIXA
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column COD_CINE_ROTULO
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 545b4266-0fcd-420b-84f3-70ffe4015c83
+		sourceColumn: COD_CINE_ROTULO
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column ID_CENTRO_UFSM
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 5ed81fe8-10a4-411f-bebd-e10c62931c49
+		sourceColumn: ID_CENTRO_UFSM
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column AREA_TCU_1
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 440512cb-094d-4ac0-acbb-64488be8028a
+		sourceColumn: AREA_TCU_1
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column FATOR_RETENCAO_TC1
+		dataType: Double
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: c6ec6f0a-4f9a-4969-99ca-6b9caba49d41
+		sourceColumn: FATOR_RETENCAO_TC1
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		changedProperty = IsHidden
+
+	column DURACAO_PADRAO_TC1
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 9760a8de-b026-4b89-8bff-3ad91f075530
+		sourceColumn: DURACAO_PADRAO_TC1
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column PESO_POR_AREA_TC1
+		dataType: Double
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 82e1589b-93bb-4bc9-a529-318253d02337
+		sourceColumn: PESO_POR_AREA_TC1
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		changedProperty = IsHidden
+
+	column AREA_TCU_2
+		dataType: String
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: f0cccd33-6195-4ae0-afdb-ffe3c25291ff
+		sourceColumn: AREA_TCU_2
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column FATOR_RETENCAO_TC2
+		dataType: Double
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 4261e8ac-c7dd-4194-baab-42eb6019fdd0
+		sourceColumn: FATOR_RETENCAO_TC2
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		changedProperty = IsHidden
+
+	column DURACAO_PADRAO_TC2
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: 046f7f67-b147-4af9-a017-0ec6eca11685
+		sourceColumn: DURACAO_PADRAO_TC2
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	column PESO_POR_AREA_TC2
+		dataType: Double
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: e1812bee-4711-48de-bb00-858434c22b3d
+		sourceColumn: PESO_POR_AREA_TC2
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		changedProperty = IsHidden
+
+	column IN_SEDE
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: eb5f850d-a70d-44b3-aa63-77c117297fab
+		sourceColumn: IN_SEDE
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	changedProperty = IsHidden
+

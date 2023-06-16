@@ -1,0 +1,392 @@
+table Medidas
+	lineageTag: 3402813b-2e4d-4220-a33c-858b0de2da6b
+	ordinal: 8
+
+	partition 'Medidas-ff9ed750-7d39-4576-9e52-03a2e6513b82' = M
+		mode: Import
+		expression:=
+			let
+			    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+			    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+			in
+			    #"Removed Columns"
+
+	measure 'Cômputo dos Componentes Graduacao' =
+		
+		    SUMX(
+		        VALUES('Graduação'),
+		        CALCULATE(
+		                SUM('Graduação'[CPC (Contínuo)])*[Total de Matrículas Graduação]
+		        )
+		    )
+		lineageTag: 7e26a230-d21a-41c8-9c82-1b2d6d013d35
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nota Graduação New' =
+		
+		    CALCULATE(
+		        DIVIDE([Cômputo dos Componentes Graduacao],
+		                [Total de Matrículas Graduação])
+		    )
+		formatString:= 0.000
+		lineageTag: 58366122-6981-48b2-ac66-849b405da0d2
+
+	measure 'Proporcao Grad no IGC ind' =
+		
+		    DIVIDE(
+		        [Total de Matrículas Graduação],
+		        (
+		            [Total de Matrículas Graduação] + 
+		            [Total de Matrículas eq. Mestrado] + 
+		            [Total de Matrículas eq. Doutorado]
+		        ),
+		        0
+		    )
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 28bf491f-4eb2-4bea-8a30-b3b1b4320123
+
+	measure 'Total de Matrículas Graduação' =
+		
+		    CALCULATE(
+		            SUM('Graduação'[Nº de Matrículas]),
+		            NOT(ISBLANK('Graduação'[CPC (Contínuo)]))
+		    )
+		formatString:= #,0
+		lineageTag: 150aceaf-e041-41c5-a2bd-b8d67bc41d7f
+
+	measure 'Cômputo dos Componentes Doutorado' =
+		
+		    SUMX(
+		        VALUES('Pós'),
+		        CALCULATE(
+		                VALUES('Pós'[Conceito Equivalente])*[Total de Matrículas PG],
+		                'Pós'[Nível]=="Doutorado" || 'Pós'[Nível]=="Doutorado profissional"
+		        )
+		    )
+		lineageTag: e0d914d9-3498-4e42-9d91-da6c2e844269
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cômputo dos Componentes Mestrado' =
+		
+		    SUMX(
+		        VALUES('Pós'),
+		        CALCULATE(
+		                VALUES('Pós'[Conceito Equivalente])*[Total de Matrículas PG],
+		                'Pós'[Nível]=="Mestrado" || 'Pós'[Nível]=="Mestrado profissional"
+		        )
+		    )
+		lineageTag: 9185a6b4-38f2-44da-9b8f-fa2a1d31cab4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'IGC Faixa' =
+		
+		IF(NOT(ISBLANK([Nota G M D])),
+		    SWITCH(TRUE(),
+		        [Nota G M D]>=0 && [Nota G M D]<0.945, 1,
+		        [Nota G M D]>=0.945 && [Nota G M D]<1.945, 2,
+		        [Nota G M D]>=1.945 && [Nota G M D]<2.945, 3,
+		        [Nota G M D]>=2.945 && [Nota G M D]<3.945, 4,
+		        [Nota G M D]>=3.945 && [Nota G M D]<=5, 5,
+		        0
+		    ),
+		    BLANK()
+		)
+		formatString:= 0
+		lineageTag: 0a2e96fb-8382-47b5-ab82-b17b7810bed3
+
+	measure 'Nota Doutorado New' =
+		
+		    CALCULATE(
+		        DIVIDE(
+		            [Cômputo dos Componentes Doutorado],
+		            [Total de Matrículas Doutorado]
+		        )
+		    )
+		formatString:= 0.000
+		lineageTag: 0391e7ea-2321-45fd-a625-c000013cf953
+
+	measure 'Nota G M D' =
+		
+		    [Nota Graduação New]*([Total de Matrículas Graduação]/([Total de Matrículas Graduação]+[Total de Matrículas eq. Mestrado]+[Total de Matrículas eq. Doutorado]))+
+		    [Nota Mestrado New]*([Total de Matrículas eq. Mestrado]/([Total de Matrículas Graduação]+[Total de Matrículas eq. Mestrado]+[Total de Matrículas eq. Doutorado]))+
+		    [Nota Doutorado New]*([Total de Matrículas eq. Doutorado]/([Total de Matrículas Graduação]+[Total de Matrículas eq. Mestrado]+[Total de Matrículas eq. Doutorado]))
+		formatString:= 0.000
+		lineageTag: 489ed8a4-8b5b-4948-adbe-b06824a69ee1
+
+	measure 'Nota Mestrado New' =
+		
+		    CALCULATE(
+		        DIVIDE([Cômputo dos Componentes Mestrado],
+		        [Total de Matrículas Mestrado]
+		        ))
+		formatString:= 0.000
+		lineageTag: eb3f581f-1b0b-43bd-a88d-a681aed6ec07
+
+	measure 'Proporcao Doutorado no IGC ind' =
+		
+		    DIVIDE(
+		        [Total de Matrículas eq. Doutorado],
+		        (
+		            [Total de Matrículas Graduação] + 
+		            [Total de Matrículas eq. Mestrado] + 
+		            [Total de Matrículas eq. Doutorado]
+		        ),
+		        0
+		    )
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: eef1bcb9-c712-4c4c-94c8-abef34bb9492
+
+	measure 'Proporcao Mestrado no IGC ind' =
+		
+		    DIVIDE(
+		        [Total de Matrículas eq. Mestrado],
+		        (
+		            [Total de Matrículas Graduação] + 
+		            [Total de Matrículas eq. Mestrado] + 
+		            [Total de Matrículas eq. Doutorado]
+		        ),
+		        0
+		    )
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 6f38ee6f-0c37-40b4-b77b-a9cef4608d3c
+
+	measure 'Total de Matrículas Doutorado' =
+		
+		    CALCULATE(
+		            SUM('Pós'[Matriculados Doutorado]),
+		            NOT(ISBLANK('Pós'[Nota Doutorado])),
+		            'Pós'[Nível]=="Doutorado"
+		    )
+		formatString:= #,0
+		lineageTag: 5db39764-d293-487b-abb1-14bade89023a
+
+	measure 'Total de Matrículas eq. Doutorado' =
+		
+		    CALCULATE(
+		            SUM('Pós'[Matrícula Equivalente]),
+		            NOT(ISBLANK('Pós'[Conceito Equivalente])),
+		            'Pós'[Nível]=="Doutorado" || 'Pós'[Nível]=="Doutorado profissional"
+		    )
+		formatString:= 0
+		lineageTag: 3a2e1328-260e-4a30-8a74-c3f1c899ad79
+
+	measure 'Total de Matrículas eq. Mestrado' =
+		
+		    CALCULATE(
+		            SUM('Pós'[Matrícula Equivalente]),
+		            NOT(ISBLANK('Pós'[Conceito Equivalente])),
+		            'Pós'[Nível]=="Mestrado" || 'Pós'[Nível]=="Mestrado profissional"
+		    )
+		formatString:= 0
+		lineageTag: 319ac2a3-411a-43cb-9cec-6226c4734dd5
+
+	measure 'Total de Matrículas Mestrado' =
+		
+		    CALCULATE(
+		            SUM('Pós'[Matriculados Mestrado]),
+		            NOT(ISBLANK('Pós'[Nota Mestrado])),
+		            'Pós'[Nível]=="Mestrado" || 'Pós'[Nível]=="Mestrado profissional"
+		    )
+		formatString:= #,0
+		lineageTag: 02696582-ae5d-4e82-b244-2f94cbac1e27
+
+	measure 'Total de Matrículas PG' = [Total de Matrículas Doutorado]+[Total de Matrículas Mestrado]
+		formatString:= #,0
+		lineageTag: 7014cfa4-88d4-4e5e-8f19-95110e514fd1
+
+	measure 'Proporcao PG no IGC ind' =
+		
+		    DIVIDE(
+		        [Total de Matrículas eq. Mestrado]+[Total de Matrículas eq. Doutorado],
+		        (
+		            [Total de Matrículas Graduação] + 
+		            [Total de Matrículas eq. Mestrado] + 
+		            [Total de Matrículas eq. Doutorado]
+		        ),
+		        0
+		    )
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: e89b1d61-c674-4fb2-a7f8-b50c4d86dad6
+
+	measure 'Total de Matrículas eq. Mestrado UFSM' =
+		
+		    CALCULATE(
+		            SUM('Pós'[Matrícula Equivalente]),
+		            NOT(ISBLANK('Pós'[Conceito Equivalente])),
+		            'Pós'[Nível]=="Mestrado" || 'Pós'[Nível]=="Mestrado profissional",
+		            ALL()
+		    )
+		displayFolder: "UFSM - Fixo"
+		formatString:= 0
+		lineageTag: 2493fb6d-1771-4762-be27-4457e269e1bd
+
+	measure 'Total de Matrículas eq. Doutorado UFSM' =
+		
+		    CALCULATE(
+		            SUM('Pós'[Matrícula Equivalente]),
+		            NOT(ISBLANK('Pós'[Conceito Equivalente])),
+		            'Pós'[Nível]=="Doutorado" || 'Pós'[Nível]=="Doutorado profissional",
+		            ALL()
+		    )
+		displayFolder: "UFSM - Fixo"
+		formatString:= 0
+		lineageTag: 9b49b72a-3f38-4d38-908f-2b005f7e5977
+
+	measure 'Total de Matrículas Graduação UFSM' =
+		
+		    CALCULATE(
+		            SUM('Graduação'[Nº de Matrículas]),
+		            NOT(ISBLANK('Graduação'[CPC (Contínuo)])),
+		            ALL()
+		    )
+		displayFolder: "UFSM - Fixo"
+		formatString:= #,0
+		lineageTag: a9af295f-168a-45e2-8eeb-fdcd08df16e2
+
+	measure 'TF Final M participacao IGC' =
+		
+		// VAR __PESO =
+		//     DIVIDE(
+		//         SUM('Pós'[Matriculados Mestrado]),
+		//         CALCULATE(
+		//             SUM('Pós'[Matriculados Mestrado]),
+		//             NOT(ISBLANK('Pós'[Nota Mestrado])),
+		//             'Pós'[Nível]=="Mestrado" || 'Pós'[Nível]=="Mestrado profissional",
+		//             ALL()
+		//         )
+		//     )
+		// RETURN
+		        
+		//                 CALCULATE(
+		//                         DIVIDE(
+		//                             [Total de Matrículas eq. Mestrado UFSM],
+		//                             ([Total de Matrículas Graduação UFSM]+[Total de Matrículas eq. Mestrado UFSM]+[Total de Matrículas eq. Doutorado UFSM])
+		//                             ),
+		//                         ALL()
+		//                 )*CALCULATE(
+		//                         SUMX(
+		//                             VALUES('Pós'),
+		//                             CALCULATE(
+		//                                     __PESO*sum('Pós'[Conceito Equivalente])
+		//                             )
+		//                         ),
+		//                         'Pós'[Nível]=="Mestrado" || 'Pós'[Nível]=="Mestrado Profissional"
+		//                 )
+		
+		
+		                CALCULATE(
+		                        DIVIDE(
+		                            [Total de Matrículas eq. Mestrado UFSM],
+		                            ([Total de Matrículas Graduação UFSM]+[Total de Matrículas eq. Mestrado UFSM]+[Total de Matrículas eq. Doutorado UFSM])
+		                            ),
+		                        ALL()
+		                )
+		
+		formatString:= 0.00%;-0.00%;0.00%
+		lineageTag: 4fa3e2d0-150a-42f2-9baf-d5783f7687bc
+
+	measure 'Measure M' =
+		
+		CALCULATE(
+		    [Proporcao Mestrado no IGC ind],
+		    all()
+		)*
+		CALCULATE(
+		            SUMX(
+		                VALUES('Pós'),
+		                CALCULATE(
+		                        [% Matr Mestrado]*sum('Pós'[Conceito Equivalente])
+		                )
+		            ),
+		            'Pós'[Nível]=="Mestrado" || 'Pós'[Nível]=="Mestrado Profissional" 
+		    )
+		lineageTag: 6911bb37-089d-448f-bcff-2cb6783473d8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total de Matrículas Mestrado UFSM' =
+		
+		    CALCULATE(
+		            SUM('Pós'[Matriculados Mestrado]),
+		            NOT(ISBLANK('Pós'[Nota Mestrado])),
+		            'Pós'[Nível]=="Mestrado" || 'Pós'[Nível]=="Mestrado profissional",
+		            ALL()
+		    )
+		displayFolder: "UFSM - Fixo"
+		formatString:= 0
+		lineageTag: 463cf610-a7d0-4d7e-91f1-385a662c7435
+
+	measure 'Total de Matrículas Doutorado UFSM' =
+		
+		    CALCULATE(
+		            SUM('Pós'[Matriculados Doutorado]),
+		            NOT(ISBLANK('Pós'[Nota Doutorado])),
+		            'Pós'[Nível]=="Doutorado",
+		            ALL()
+		    )
+		displayFolder: "UFSM - Fixo"
+		formatString:= 0
+		lineageTag: 9114032e-69f2-4c45-8929-a7cd07401f48
+
+	measure '% Matr Mestrado' =
+		
+		    DIVIDE(
+		        sum('Pós'[Matriculados Mestrado]),
+		        [Total de Matrículas Mestrado UFSM]
+		    )
+		lineageTag: c9210fb3-107d-4bf8-ab88-1142a4376336
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Matr Doutorado' =
+		
+		    DIVIDE(
+		        sum('Pós'[Matriculados Doutorado]),
+		        [Total de Matrículas Doutorado UFSM]
+		    )
+		lineageTag: 5f6be47f-a2bf-4e8c-99cd-8979ab1cb16d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Measure D' =
+		
+		CALCULATE(
+		    [Proporcao Doutorado no IGC ind],
+		    all()
+		)*
+		CALCULATE(
+		            SUMX(
+		                VALUES('Pós'),
+		                CALCULATE(
+		                        [% Matr Doutorado]*sum('Pós'[Conceito Equivalente])
+		                )
+		            ),
+		            'Pós'[Nível]=="Doutorado" || 'Pós'[Nível]=="Doutorado Profissional" 
+		    )
+		lineageTag: bc3b8b11-15a1-4b24-b718-5ec7507d75f7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Measure G' =
+		
+		CALCULATE(
+		    [Proporcao Grad no IGC ind],
+		    all()
+		)*
+		SUMX(
+		                VALUES('Graduação'),
+		                CALCULATE(
+		                        [% Matr Mestrado]*sum('Graduação'[CPC (Contínuo)])
+		                )
+		            )
+		    
+		lineageTag: b97e3fb3-75f2-481d-8727-e45d8cdb9762
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	annotation PBI_ResultType = Table
+

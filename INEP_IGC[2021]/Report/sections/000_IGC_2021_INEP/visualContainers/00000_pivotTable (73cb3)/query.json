@@ -1,0 +1,191 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "n",
+              "Entity": "Unidades",
+              "Type": 0
+            },
+            {
+              "Name": "m",
+              "Entity": "Medidas",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "n"
+                  }
+                },
+                "Property": "Sigla Centro"
+              },
+              "Name": "NAV_UNIDADES.SIGLA_CENTRO",
+              "NativeReferenceName": "Centro"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Nota Mestrado New"
+              },
+              "Name": "Pós.Nota Mestrado New",
+              "NativeReferenceName": "Mestrado"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Nota Doutorado New"
+              },
+              "Name": "Pós.Nota Doutorado New",
+              "NativeReferenceName": "Doutorado"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Nota Graduação New"
+              },
+              "Name": "Graduação.Nota Graduação New",
+              "NativeReferenceName": "Graduação"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Proporcao Mestrado no IGC ind"
+              },
+              "Name": "Pós.Proporcao Mestrado no IGC ind",
+              "NativeReferenceName": "% Mestrado"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Proporcao Doutorado no IGC ind"
+              },
+              "Name": "Pós.Proporcao Doutorado no IGC ind",
+              "NativeReferenceName": "% Doutorado"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Proporcao Grad no IGC ind"
+              },
+              "Name": "Graduação.Proporcao Grad no IGC ind",
+              "NativeReferenceName": "% Graduação"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Nota G M D"
+              },
+              "Name": "Pós.Nota G M D",
+              "NativeReferenceName": " IGC (Contínuo)"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "IGC Faixa"
+              },
+              "Name": "Pós.IGC Faixa",
+              "NativeReferenceName": " IGC (Faixa)"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "m"
+                  }
+                },
+                "Property": "Proporcao PG no IGC ind"
+              },
+              "Name": "Medidas.Proporcao PG no IGC ind",
+              "NativeReferenceName": "% PG"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "m"
+                    }
+                  },
+                  "Property": "Nota G M D"
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "Subtotal": 1
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 3,
+            "Primary": {
+              "Window": {
+                "Count": 500
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}
