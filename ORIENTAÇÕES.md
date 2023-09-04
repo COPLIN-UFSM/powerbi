@@ -20,12 +20,13 @@ Pode ser tanto para o público em geral quanto para os gestores. A partir dessa 
 
 * Quais dados serão necessários para entregar o relatório?
 * Os dados estão disponíveis em qual banco de dados?
-* Serão necessárias informações de fora do banco de dados? Se sim, e onde?
+* Serão necessárias informações de fora do banco de dados? Se sim, de onde?
 * É interessante adicionar estas outras informações ao banco de dados?
+* Existe necessidade de tratar os dados? Se sim, qual tipo de tratamento?
 
-#### Tratamento
+### Medidas
 
-Existe necessidade de tratar os dados? Se sim, qual tipo de tratamento?
+Quais medidas são necessárias para a criação dos gráficos?
 
 ### Visualização
 
