@@ -9,6 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=build
+set DOCSDIR=..\docs
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
