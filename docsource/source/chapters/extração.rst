@@ -14,7 +14,7 @@ Processamento de Dados (CPD), para os dados que alimentam o portal `UFSM em Núm
 
 Faremos então um exercício diferente. Faça download da tabela `iestudantes.csv
 <https://coplin-ufsm.github.io/powerbi/data/iestudantes.csv>`_ no seu computador, e abrindo-a em um editor de planilhas
-(Microsoft Excel, Libreoffice Calc ou outro), inspecione as colunas e responda se a mesma atende às seguintes demandas:
+(Microsoft Excel, Libreoffice Calc ou outro), inspecione as colunas e responda se a tabela atende as seguintes demandas:
 
 
 .. |uncheck| raw:: html
