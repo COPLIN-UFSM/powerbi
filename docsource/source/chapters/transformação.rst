@@ -14,6 +14,7 @@ Em ambos os casos, a transformação de dados consiste em:
 - Alterar o tipo dos dados
 - Classificar os dados
 - Adicionar ou remover linhas e colunas
+- Criar colunas com cálculos, condiçoes,  diferença de datas e etc.
 - Definir a primeira linha como títulos
 - Dividir colunas
 - Converter texto em números

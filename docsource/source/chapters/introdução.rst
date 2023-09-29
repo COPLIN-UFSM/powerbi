@@ -7,6 +7,10 @@ Introdução
 
 O Power BI é uma ferramenta de visualização e análise de dados desenvolvida pela Microsoft. Ele permite conexão com uma variedade de fontes de dados, transformação e modelagem desses dados para que sejam gerados relatórios interativos e painéis de controle dinâmicos. Assim, o Power BI é extremamente útil para embasar decisões através de informações visuais e *insights*.
 
+
+Dê vida para os seus dados com o Power BI!!!
+
+
 **Principais funcionalidades do Power BI:**
 
 - **Extração e importação de dados:** conexão com diversas fontes para importação de dados, como bancos de dados, planilhas eletrônicas, nuvem (como Azure, Google Analytics, Salesforce) e muitos outros.
