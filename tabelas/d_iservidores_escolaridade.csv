@@ -1,0 +1,13 @@
+ESCOLARIDADE,ID_ESCOLARIDADE
+1 Grau Incompleto até 4 Série Incompleta,3
+1 Grau Incompleto até 4 Série Completa,4
+1 Grau Incompleto 5 Série a 8 Incompleto,5
+1 Grau Completo - Até 8 Série Completo,6
+2 Grau Incompleto,7
+2 Grau Completo ou Técnico,8
+Superior Incompleto,9
+Sup. Compl. ou Habilitação Legal Eq.,10
+Aperfeiçoamento,11
+Especialização,12
+Mestrado,13
+Doutorado,14
