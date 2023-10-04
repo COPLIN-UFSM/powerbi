@@ -44,7 +44,54 @@
             
   <section id="metricas">
 <span id="id1"></span><h1>Métricas<a class="headerlink" href="#metricas" title="Link permanente para este cabeçalho">¶</a></h1>
-<p>Texto da seção.</p>
+<p>As funções <strong>DAX</strong> (<em>Data Analysis Expressions</em>) permitem criar fórmulas e expressões no Power BI. Elas incluem funções, operadores e valores para realizar cálculos avançados e consultas em dados nas tabelas e colunas relacionadas nos modelos de dados tabulares.</p>
+<p><strong>Cinco funções DAX muito úteis no Power BI.</strong></p>
+<p><strong>1 - Função</strong> <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/filter-function-dax">FILTER</a></p>
+<p>Esta função é utilizada para retornar um subconjunto de uma tabela ou expressão.</p>
+<p>Esta fórmula tem a seguinte estrutura: FILTER (&lt;tabela&gt;, &lt;filtro&gt;)</p>
+<p><strong>2 - Função</strong> <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/all-function-dax">ALL</a></p>
+<p>Esta função é utilizada para retornar todas as linhas de uma tabela ou valores em uma coluna, ignorando qualquer filtro que tenha sido aplicado.</p>
+<p>Esta fórmula tem a seguinte estrutura: ALL (&lt;tabela&gt; ou &lt;coluna&gt;)</p>
+<p>Assim como a função FILTER, esta função não pode ser usada sozinha, sempre estará com outra função em conjunto.</p>
+<p>Essa função pode ser utilizada tanto numa tabela quanto numa coluna, limpando qualquer filtro colocado nas visualizações.</p>
+<p><strong>3 - Função</strong> <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/related-function-dax">RELATED</a></p>
+<p>A função RELATED retorna um valor relacionado de outra tabela.</p>
+<p>Esta fórmula tem a seguinte estrutura: RELATED (&lt;coluna&gt;)</p>
+<p>As funções DAX podem ser usadas agregadas com outras funções.</p>
+<p><strong>Exemplo:</strong></p>
+<p>Qtde Vendas SP = COUNTROWS(FILTER(ALL(Vendas);RELATED(Local[Cidade])=”São Paulo”))</p>
+<p><strong>4 - Funções</strong> <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/totalytd-function-dax">TOTALYTD</a> / <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/totalqtd-function-dax">TOTALQTD</a> / <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/totalmtd-function-dax">TOTALMTD</a></p>
+<p>Estas funções são de inteligência de tempo e são uma das grandes vantagens da linguagem DAX. Através delas se consegue mais inteligência na análise de dados que envolvem o tempo como variável.</p>
+<p>Com estas funções é possível manipular dados de período de tempo, tais como, dias, meses, trimestres e anos. Com elas se cria comparativos entre os períodos.</p>
+<p>Esta fórmula tem a seguinte estrutura: TOTALYTD (&lt;expressão&gt;;&lt;datas&gt;;&lt;filtro&gt;;&lt;data fim ano&gt;)</p>
+<p><strong>Exemplo:</strong></p>
+<p>Total Vendas Ano = TOTALYTD(SUM(Vendas[Valor]);Calendario[Datas])</p>
+<p><strong>5 - Função</strong> <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/calculate-function-dax">CALCULATE</a></p>
+<p>Esta função avalia uma expressão em um contexto que pode ser mudado por filtros específicos.</p>
+<p>Esta provavelmente será uma das que você mais utilizará!</p>
+<p>A Função CALCULATE tem a seguinte estrutura: CALCULATE(&lt;expressão&gt;;&lt;filtro1&gt;;&lt;filtro2&gt;;…)</p>
+<p><strong>Exemplo:</strong></p>
+<p>Vendas Todas Cidades = CALCULATE(SUM(Vendas[Valor]);ALL(Local[Cidade]))</p>
+<p>O primeiro parâmetro “SUM(Vendas[Valor])” traz a coluna que terá seus valores agregados. O segundo parâmetro “ALL(Local[Cidade])”, como utiliza a função ALL desconsidera qualquer filtro feito e ao mesmo tempo faz com que o cálculo seja aplicado em relação às cidades.</p>
+<p>A função CALCULATE é uma das mais úteis e poderosas funções DAX, é como se fosse um “SE” superpoderoso que junta vários SES em uma única expressão.</p>
+<p>Esta função tem algumas regras, veja:</p>
+<p><strong>a)</strong> Os parâmetros de filtros <strong>não</strong> podem se referenciar à medidas</p>
+<p><strong>b)</strong> As expressões <strong>não</strong> podem usar funções que procuram ou retornam tabelas inteiras</p>
+<p>Nas documentações listadas a seguir você encontra informações detalhadas sobre sintaxe, parâmetros, valores retornados e exemplos para cada uma das mais de 250 funções usadas em fórmulas DAX, que incluem:</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/aggregation-functions-dax">Funções de agregação</a>:  calculam um valor (escalar) de uma contagem, soma, média, mínimo ou máximo para todas as linhas de uma coluna ou tabela.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/date-and-time-functions-dax">Funções de data e hora</a>: essas funções do DAX são semelhantes às funções de data e hora do Microsoft Excel. No entanto, as funções DAX são baseadas nos tipos de dados datetime usados pelo Microsoft SQL Server.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/filter-functions-dax">Funções de filtro</a>: retornam tipos de dados específicos, valores em tabelas relacionadas e dados filtrados por valores relacionados. Funcionam usando tabelas e relações entre elas. As funções de filtragem permitem que se manipule o contexto de dados para criar cálculos dinâmicos.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/financial-functions-dax">Funções financeiras</a>: essas funções são usadas em fórmulas que fazem cálculos financeiros, como o valor líquido atual e a taxa de retorno, entre outros..</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/information-functions-dax">Funções de informações</a>: examinam uma tabela ou uma coluna fornecida como argumento para outra função e retornam se o valor corresponde ao tipo esperado. Por exemplo, a função ISERROR retornará TRUE se o valor referenciado contiver um erro.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/logical-functions-dax">Funções lógicas</a>: ss funções lógicas agem sobre uma expressão para retornar informações sobre os valores ou conjuntos dela. Por exemplo, você pode usar a função IF para verificar o resultado de uma expressão e criar resultados condicionais.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/math-and-trig-functions-dax">Funções matemáticas e trigonométricas</a>: as funções matemáticas do DAX são semelhantes às funções matemáticas e trigonométricas do Excel. No entanto, há algumas diferenças nos tipos de dados numéricos usados pelas funções DAX.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/parent-and-child-functions-dax">Funções pai e filho</a>: ajudam os usuários a gerenciar os dados que são apresentados como uma hierarquia pai/filho nos modelos de dados. Mais informações sobre as funções pai/filho <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/understanding-functions-for-parent-child-hierarchies-in-dax">aqui</a>.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/relationship-functions-dax">Funções de relação</a>: essas funções são para gerenciar e utilizar relações entre tabelas. Por exemplo, você pode definir uma relação específica a ser usada em um cálculo.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/statistical-functions-dax">Funções estatísticas</a>: calculam valores relacionados a probabilidade e a distribuições estatísticas, como desvio padrão e número de permutações.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/table-manipulation-functions-dax">Funções de manipulação de tabela</a>: essas funções retornam uma tabela ou manipulam tabelas existentes.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/text-functions-dax">Funções de texto</a>: com essas funções, você pode retornar parte de uma cadeia de caracteres, pesquisar um texto em uma cadeia de caracteres ou concatenar valores de cadeia de caracteres. Funções adicionais destinam-se a controlar os formatos de datas, horas e números.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/time-intelligence-functions-dax">Funções de inteligência de dados temporais</a>: essas funções permitem criar cálculos com dados de calendários e datas. Elas permitem manipular dados usando períodos de tempo como dias, meses, trimestres e anos, além de criar e comparar cálculos referentes a esses períodos. Intervalos de data e hora podem ser usados em combinação com funções de agregação ou cálculos para criar comparações significativas entre períodos de tempo.</p>
+<p><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/other-functions-dax">Outras funções</a>: essas funções executam ações exclusivas que não se enquadram nas anteriores.</p>
 </section>
 
 

@@ -1,0 +1,7 @@
+TURNO,ID_TURNO
+Matutino,1
+Vespertino,2
+Noturno,3
+Vespertino / Noturno,4
+Integral,5
+Diurno,6
