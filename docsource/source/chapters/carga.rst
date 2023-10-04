@@ -5,21 +5,20 @@
 Carga de dados
 ==============
 
-Com o Power BI é possível carregar/importar dados de várias fontes para compor o seu *dataset*, como Excel, a internet, SQL, etc.
+Após a extração e a transformação, a carga de dados consiste em carregá-los propriamente para o Power BI. Após a carga,
+entende-se que os dados estão prontos para serem consumidos da maneira como se apresentam.
 
+Ao carregar os dados, estes passam a fazer parte de um *dataset*. Este *dataset* pode ser consumido por diversos
+*relatórios*, ou então apenas por um, a depender dos casos de uso.
 
-Basicamente, carregar os dados para o seu *dataset* do Power BI consiste em:
+.. note::
+    A carga que nos referimos aqui é do modelo ETL (*extraction - transformation - load*), e não necessariamente a
+    carga feita no Power BI.
 
+Pode ser que, após fazer a carga, você perceba que faltou realizar algum pré-processamento (transformação) nos dados.
+É possível então realizar esta etapa utilizando o editor Power Query, interno ao Power BI. As modificações feitas serão
+imediatamente aplicadas e os dados serão recarregados automaticamente.
 
-1 - **Página Inicial > Obter dados:** escolher o tipo de arquivo, selecionar o arquivo que desejamos carregar para o modelo e marcar a aba que contem os dados de interesse. 
-
-2 - **Carregar ou Corrigir Dados?**
-
-       - **Carregar** se a transformação dos dados já foi realizada e os dados estão "limpos" para carregamento direto no modelo.
-
-       - **Corrigir Dados** se os dados estiverem brutos e precisam ser tratados antes do carregamento para o modelo, neste caso no Editor do Power Query.
-
-
-Uma vez carregados os dados, as tabelas do *dataset* são listadas na área **Dados** à direita da página principal do Power BI. É daqui que acessamos os dados para a construção dos relatórios e dashboards. 
-
-Na documentação `Fontes de dados no Power BI Desktop <https://learn.microsoft.com/pt-br/power-bi/connect-data/desktop-data-sources>`_ constam listadas as diversas fontes disponíveis para carregar/importar dados para o Power BI.
+Na documentação
+`Fontes de dados no Power BI Desktop <https://learn.microsoft.com/pt-br/power-bi/connect-data/desktop-data-sources>`_
+são listadas as diversas fontes disponíveis para carregar dados para o Power BI.
