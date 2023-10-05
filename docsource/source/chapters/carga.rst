@@ -29,6 +29,13 @@ imediatamente aplicadas e os dados serão recarregados automaticamente.
 
     O Power BI não faz extração de dados.
 
+Tarefa
+------
+
+Considerando a tabela `iestudantes.csv
+<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
+crie dois grupos para visualização: Brasileiro e Estrangeiro.
+
 Bibliografia
 ------------
 
