@@ -19,6 +19,19 @@ Pode ser que, após fazer a carga, você perceba que faltou realizar algum pré-
 É possível então realizar esta etapa utilizando o editor Power Query, interno ao Power BI. As modificações feitas serão
 imediatamente aplicadas e os dados serão recarregados automaticamente.
 
+.. note::
+    Quando carregamos uma planilha ou um banco de dados no Power BI, estamos fazendo uma **carga** de dados. Logo após
+    a carga, podemos transformar os dados ou consumi-los da maneira como se apresentam. No Power BI, os dados ainda
+    poderão ser transformados mesmo depois de feita a carga.
+
+    Assim, o Power BI aborda a transformação e carga de dados de maneira iterativa, onde as duas etapas podem ser
+    revisitadas quantas vezes forem necessárias.
+
+    O Power BI não faz extração de dados.
+
+Bibliografia
+------------
+
 Na documentação
 `Fontes de dados no Power BI Desktop <https://learn.microsoft.com/pt-br/power-bi/connect-data/desktop-data-sources>`_
 são listadas as diversas fontes disponíveis para carregar dados para o Power BI.

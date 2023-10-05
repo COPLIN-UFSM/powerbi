@@ -36,10 +36,17 @@ mencionar que aqui a fonte de dados original não é afetada.
     dados. Em outras palavras, se você deletar uma coluna no Power Query, por exemplo, esta coluna ainda estará presente
     na planilha do Excel da qual os dados foram extraídos.
 
-Adicionalmente, você pode expandir seu aprendizado e buscar soluções para os seus relatórios através do
+Tarefa
+------
+
+Considerando a tabela `iestudantes.csv
+<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando qualquer tipo
+de editor de planilhas (Power Query, Excel, Calc, etc), transforme a coluna **Nacionalidade** de gentílico
+(e.g. brasileiro, peruano, etc) para o nome do país (e.g. Brasil, Peru, etc).
+
+
+Bibliografia
+------------
+
+A Microsoft apresenta um roteiro de aprendizagem para transformação de dados em
 `roteiro de aprendizagem <https://learn.microsoft.com/pt-br/training/paths/prepare-data-power-bi/>`_.
-
-
-
-
-
