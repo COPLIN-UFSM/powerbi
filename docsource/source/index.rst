@@ -10,7 +10,7 @@ Bem vindo ao curso de Capacitação em Power BI da Universidade Federal de Santa
 
 .. toctree::
    :maxdepth: 2
-   :caption: Sumário:
+   :caption: **Sumário**
 
    chapters/introdução
    chapters/instalação
@@ -19,6 +19,8 @@ Bem vindo ao curso de Capacitação em Power BI da Universidade Federal de Santa
    chapters/carga
    chapters/métricas
    chapters/gráficos
+   chapters/activities/index
+
 
 Índices e Tabelas
 =================
