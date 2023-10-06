@@ -9,8 +9,8 @@ Capacitação em Power BI da UFSM
 Bem vindo ao curso de Capacitação em Power BI da Universidade Federal de Santa Maria!
 
 .. toctree::
-   :maxdepth: 2
-   :caption: **Sumário**
+   :maxdepth: 1
+   :caption: Sumário
 
    chapters/introdução
    chapters/instalação
