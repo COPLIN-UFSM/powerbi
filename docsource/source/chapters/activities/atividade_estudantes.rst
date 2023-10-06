@@ -16,10 +16,33 @@ No Power BI, faça um relatório com os seguintes itens:
 #. Número de alunos...
 
    * |uncheck| total, como um número
-   * |uncheck| Por gênero, como um gráfico de pizza
-   * |uncheck| Por etnia, como um gráfico de barras verticais
-   * |uncheck| Por modalidade (EAD ou Presencial), como um gráfico de pizza
-   * |uncheck| Por nível de ensino, como um gráfico de barras verticais
-   * |uncheck| Por turno, como um gráfico de barras verticais
+   * |uncheck| Por gênero, como um gráfico de rosca
+   * |uncheck| Por etnia, como um gráfico de barras horizontais
+   * |uncheck| Por modalidade (EAD ou Presencial), como um gráfico de barras verticais
+   * |uncheck| Por nível de ensino, como um gráfico de barras horizontais
+   * |uncheck| Por turno, como um gráfico de barras horizontais
    * |uncheck| Por grau acadêmico, como um gráfico de barras horizontais
    * |uncheck| Por centro, como um gráfico de barras horizontais
+   * |uncheck| Um filtro para selecionar estudantes nacionais ou estrangeiros
+
+.. |details| raw:: html
+
+    <details>
+    <summary><b>Medida</b></summary>
+
+        <code>
+            Alunos = SUM(iestudantes[NUM_ALUNOS])
+        </code>
+
+    </details>
+
+
+Solução
+-------
+
+#. Carregar dados
+#. Colocar primeira linha como cabeçalho
+#. Converter colunas numéricas para números inteiros
+#. Criar medida que soma o número de alunos |details|
+#. Criar gráficos
+#. Criar seletor

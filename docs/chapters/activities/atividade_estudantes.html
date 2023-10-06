@@ -47,16 +47,35 @@ No Power BI, faça um relatório com os seguintes itens:</p>
 <li><p>Número de alunos…</p>
 <ul class="simple">
 <li><p><input type="checkbox"> total, como um número</p></li>
-<li><p><input type="checkbox"> Por gênero, como um gráfico de pizza</p></li>
-<li><p><input type="checkbox"> Por etnia, como um gráfico de barras verticais</p></li>
-<li><p><input type="checkbox"> Por modalidade (EAD ou Presencial), como um gráfico de pizza</p></li>
-<li><p><input type="checkbox"> Por nível de ensino, como um gráfico de barras verticais</p></li>
-<li><p><input type="checkbox"> Por turno, como um gráfico de barras verticais</p></li>
+<li><p><input type="checkbox"> Por gênero, como um gráfico de rosca</p></li>
+<li><p><input type="checkbox"> Por etnia, como um gráfico de barras horizontais</p></li>
+<li><p><input type="checkbox"> Por modalidade (EAD ou Presencial), como um gráfico de barras verticais</p></li>
+<li><p><input type="checkbox"> Por nível de ensino, como um gráfico de barras horizontais</p></li>
+<li><p><input type="checkbox"> Por turno, como um gráfico de barras horizontais</p></li>
 <li><p><input type="checkbox"> Por grau acadêmico, como um gráfico de barras horizontais</p></li>
 <li><p><input type="checkbox"> Por centro, como um gráfico de barras horizontais</p></li>
+<li><p><input type="checkbox"> Um filtro para selecionar estudantes nacionais ou estrangeiros</p></li>
 </ul>
 </li>
 </ol>
+<section id="solucao">
+<h2>Solução<a class="headerlink" href="#solucao" title="Link permanente para este cabeçalho">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Carregar dados</p></li>
+<li><p>Colocar primeira linha como cabeçalho</p></li>
+<li><p>Converter colunas numéricas para números inteiros</p></li>
+<li><p>Criar medida que soma o número de alunos <details>
+<summary><b>Medida</b></summary>
+
+    <code>
+        Alunos = SUM(iestudantes[NUM_ALUNOS])
+    </code>
+
+</details></p></li>
+<li><p>Criar gráficos</p></li>
+<li><p>Criar seletor</p></li>
+</ol>
+</section>
 </section>
 
 
@@ -66,6 +85,16 @@ No Power BI, faça um relatório com os seguintes itens:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Tabela de Conteúdo</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Estudantes</a><ul>
+<li><a class="reference internal" href="#solucao">Solução</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div>
     <h4>Tópico anterior</h4>
     <p class="topless"><a href="index.html"

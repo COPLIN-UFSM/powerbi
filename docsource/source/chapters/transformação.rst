@@ -40,8 +40,9 @@ Tarefa
 ------
 
 Considerando a tabela `iestudantes.csv
-<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power Query,
-transforme a coluna **Nacionalidade** de gentílico (e.g. brasileiro, peruano, etc) para o nome do país (e.g. Brasil,
+<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power Query...
+
+#. Transforme a coluna **Nacionalidade** de gentílico (e.g. brasileiro, peruano, etc) para o nome do país (e.g. Brasil,
 Peru, etc).
 
 
