@@ -50,7 +50,7 @@ tipo do gráfico.
 * Escolha cores que podem ser visualizadas por pessoas com deficiência.
 
 O site `Coolors <https://coolors.co/>`_ permite formular paletas de cores online e rapidamente. Já o site
-`Viz Palette <https://www.susielu.com/data-viz/viz-palette>`_ mostra como diferentes cores são visualizadas por pessoas
+`Viz Palette <https://projects.susielu.com/viz-palette>`_ mostra como diferentes cores são visualizadas por pessoas
 com deficiência visual.
 
 Bibliografia
@@ -59,4 +59,4 @@ Bibliografia
 * `Documentação oficial sobre gráficos <https://learn.microsoft.com/pt-br/power-bi/visuals/power-bi-visualization-types-for-reports-and-q-and-a>`_
 * `Ferramenta interativa para escolha do tipo de gráfico <https://app.powerbi.com/view?r=eyJrIjoiYThhMjI1OWEtZWU4My00MmQ4LWJiYjctNTc5YzVlMDdiMDBkIiwidCI6IjdkNWZlMmNlLTA3M2QtNGVmMC05Y2RkLWNhZGRjMjU5Zjc3OCJ9>`_
 * `Paleta de cores online <https://coolors.co/>`_
-* `Ferramenta para calibrar cores para pessoas com deficiência visual <https://www.susielu.com/data-viz/viz-palette>`_
+* `Ferramenta para calibrar cores para pessoas com deficiência visual <https://projects.susielu.com/viz-palette>`_
