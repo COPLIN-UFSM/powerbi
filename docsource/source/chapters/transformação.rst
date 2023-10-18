@@ -28,8 +28,9 @@ Independente da ferramenta utilizada, a transformação de dados consiste em:
 A documentação
 `Visão geral de Consulta no Power BI Desktop <https://learn.microsoft.com/pt-br/power-bi/transform-model/desktop-query-overview>`_
 e o tutorial `Formatar e combinar dados no Power BI Desktop <https://learn.microsoft.com/pt-br/power-bi/connect-data/desktop-shape-and-combine-data>`_
-fornecem instruções passo-a-passo do processo de transformação dos dados diretamente no Editor Power Query. É importante
-mencionar que aqui a fonte de dados original não é afetada.
+fornecem instruções passo-a-passo do processo de transformação dos dados diretamente no Editor Power Query.
+
+.. É importante mencionar que aqui a fonte de dados original não é afetada.
 
 .. note::
     Se você optar por transformar os dados no Power Query, as modificações feitas não serão refletidas nas fontes de
@@ -40,14 +41,13 @@ Tarefa
 ------
 
 Considerando a tabela `iestudantes.csv
-<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power Query...
-
-#. Transforme a coluna **Nacionalidade** de gentílico (e.g. brasileiro, peruano, etc) para o nome do país (e.g. Brasil,
+<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power Query,
+transforme a coluna **Nacionalidade** de gentílico (e.g. brasileiro, peruano, etc) para o nome do país (e.g. Brasil,
 Peru, etc).
 
 
 Bibliografia
 ------------
 
-A Microsoft apresenta um roteiro de aprendizagem para transformação de dados em
-`roteiro de aprendizagem <https://learn.microsoft.com/pt-br/training/paths/prepare-data-power-bi/>`_.
+A Microsoft apresenta um roteiro de aprendizagem para transformação de dados em seus
+`Roteiros de Aprendizagem <https://learn.microsoft.com/pt-br/training/paths/prepare-data-power-bi/>`_.

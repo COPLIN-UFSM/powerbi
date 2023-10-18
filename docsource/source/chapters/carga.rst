@@ -20,9 +20,9 @@ Pode ser que, após fazer a carga, você perceba que faltou realizar algum pré-
 imediatamente aplicadas e os dados serão recarregados automaticamente.
 
 .. note::
-    Quando carregamos uma planilha ou um banco de dados no Power BI, estamos fazendo uma **carga** de dados. Logo após
-    a carga, podemos transformar os dados ou consumi-los da maneira como se apresentam. No Power BI, os dados ainda
-    poderão ser transformados mesmo depois de feita a carga.
+    Quando carregamos uma planilha ou um banco de dados no Power BI, estamos fazendo uma **carga** (do modelo ETL) de
+    dados. Logo após a carga, podemos transformar os dados ou consumi-los da maneira como se apresentam. No Power BI, os
+    dados ainda poderão ser transformados mesmo depois de feita a carga.
 
     Assim, o Power BI aborda a transformação e carga de dados de maneira iterativa, onde as duas etapas podem ser
     revisitadas quantas vezes forem necessárias.
@@ -34,7 +34,8 @@ Tarefa
 
 Considerando a tabela `iestudantes.csv
 <https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
-crie dois grupos para visualização: Brasileiro e Estrangeiro.
+`crie dois grupos <https://learn.microsoft.com/pt-br/power-bi/create-reports/desktop-grouping-and-binning>`_ para
+visualização: Brasileiro e Estrangeiro.
 
 Bibliografia
 ------------

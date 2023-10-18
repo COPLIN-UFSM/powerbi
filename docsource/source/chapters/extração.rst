@@ -10,7 +10,8 @@ consolidá-la em tabelas ou planilhas intermediárias para processamento em outr
 
 Neste curso, não faremos a extração de dados propriamente dita, pois isto já foi realizado pelo Centro de
 Processamento de Dados (CPD), para os dados que alimentam o portal `UFSM em Números
-<https://portal.ufsm.br/ufsm-em-numeros/publico/index.html>`_.
+<https://portal.ufsm.br/ufsm-em-numeros/publico/index.html>`_. Faremos então uma atividade diferente, descrita na seção
+abaixo.
 
 Tarefa
 ------
@@ -18,7 +19,7 @@ Tarefa
 Faça download da tabela `iestudantes.csv
 <https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_ no seu computador, e abrindo-a
 em um editor de planilhas (Power Query, Microsoft Excel, Libreoffice Calc ou outro), inspecione as colunas e responda se
-a tabela atende as seguintes demandas:
+a tabela atende às seguintes demandas:
 
 
 .. |uncheck| raw:: html
@@ -62,5 +63,5 @@ a tabela atende as seguintes demandas:
 
 **Relacionar os servidores..**
 
-#. Número de docentes
-#. Número de servidores técnicos-administrativos em Educação
+#. |uncheck| Número de docentes
+#. |uncheck| Número de servidores técnicos-administrativos em Educação

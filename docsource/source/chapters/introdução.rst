@@ -34,4 +34,4 @@ O Power BI é adequado para diversos profissionais, desde analistas e cientistas
 desejam tomar decisões baseadas em dados e evidências de modo seguro e visualmente atraente.
 
 Você pode fazer cursos de capacitação oficiais da Microsoft nos
-`roteiros de aprendizagem <https://learn.microsoft.com/pt-br/training/paths/get-started-power-bi/>`_. disponibilizados.
+`roteiros de aprendizagem <https://learn.microsoft.com/pt-br/training/paths/get-started-power-bi/>`_ disponibilizados.
