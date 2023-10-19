@@ -18,10 +18,10 @@ Principais funcionalidades do Power BI
    planilhas do Excel, nuvem (e.g. Azure, Google Analytics, Salesforce), dentre outros;
 2. **Transformação:** limpeza e transformação dos dados importados;
 3. **Modelagem:** criação de tabelas, relacionamentos e cálculos personalizados (DAX);
-4. **Relatórios interativos *(storytelling)*:** criação de relatórios interativos e dinâmicos que permitem ao usuário
+4. **Relatórios interativos (storytelling):** criação de relatórios interativos e dinâmicos que permitem ao usuário
    visualizar os dados como quiser. Nestes relatórios, os dados podem ser filtrados ou classificados para obter
    informações detalhadas sobre uma área de interesse;
-5. **Painéis de controle (*dashboards*):** são personalizáveis e dedicados à visualização dos dados, fornecendo
+5. **Painéis de controle (dashboards):** são personalizáveis e dedicados à visualização dos dados, fornecendo
    visualização de métricas importantes para as análises;
 6. **Compartilhamento e colaboração:** é possível compartilhar relatórios e painéis de controle com colegas de trabalho
    ou outros usuários interessados, permitindo a colaboração e a tomada de decisões em equipe;

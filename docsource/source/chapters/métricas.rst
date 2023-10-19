@@ -183,6 +183,13 @@ Uma lista não-extensiva dos tipos de funções seria:
 * `Funções de inteligência de dados temporais <https://learn.microsoft.com/pt-br/dax/time-intelligence-functions-dax>`_: essas funções permitem criar cálculos com dados de calendários e datas. Elas permitem manipular dados usando períodos de tempo como dias, meses, trimestres e anos, além de criar e comparar cálculos referentes a esses períodos. Intervalos de data e hora podem ser usados em combinação com funções de agregação ou cálculos para criar comparações significativas entre períodos de tempo.
 * `Outras funções <https://learn.microsoft.com/pt-br/dax/other-functions-dax>`_: essas funções executam ações exclusivas que não se enquadram nas anteriores.
 
+Tarefa
+------
+
+Considerando a tabela `iestudantes.csv
+<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
+crie uma métrica para somar o número de alunos que pertencem a cada uma das categorias.
+
 Bibliografia
 ------------
 

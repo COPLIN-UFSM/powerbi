@@ -56,6 +56,13 @@ O site `Coolors <https://coolors.co/>`_ permite formular paletas de cores online
 `Viz Palette <https://projects.susielu.com/viz-palette>`_ mostra como diferentes cores são visualizadas por pessoas
 com deficiência visual.
 
+Tarefa
+------
+
+Considerando a tabela `iestudantes.csv
+<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
+qual o melhor tipo de gráfico para mostrar os alunos agrupados por gênero?
+
 Bibliografia
 ------------
 
