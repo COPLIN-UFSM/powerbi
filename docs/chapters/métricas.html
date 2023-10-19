@@ -17,7 +17,7 @@
     <script src="../_static/translations.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="Tipos de Gráficos" href="gr%C3%A1ficos.html" />
+    <link rel="next" title="Gráficos" href="gr%C3%A1ficos.html" />
     <link rel="prev" title="Carga de dados" href="carga.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -27,7 +27,7 @@
           <a href="../genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
         <li class="right" >
-          <a href="gr%C3%A1ficos.html" title="Tipos de Gráficos"
+          <a href="gr%C3%A1ficos.html" title="Gráficos"
              accesskey="N">próximo</a> |</li>
         <li class="right" >
           <a href="carga.html" title="Carga de dados"
@@ -87,40 +87,84 @@ aprenderá os conceitos da linguagem DAX enquanto cria relatórios no Power BI.<
 <p>Existe um conjunto de funções do DAX que são mais frequentemente usadas do que outras. Consulte a
 <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/dax-function-reference">documentação oficial</a> da Microsoft para uma lista
 completa de todas as funções.</p>
-<section id="id2">
-<h3><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/filter-function-dax">FILTER</a><a class="headerlink" href="#id2" title="Link permanente para este cabeçalho">¶</a></h3>
-<p>Utilizada para retornar um subconjunto de uma tabela ou expressão.</p>
-<div class="highlight-dax notranslate"><div class="highlight"><pre><span></span><span class="nf">FILTER</span><span class="w"> </span><span class="p">(</span>&lt;tabela&gt;, &lt;filtro&gt;)
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>As vezes você perceberá que alguns comandos estão escritos em uma linha apenas, enquanto outros estão divididos em
+múltiplas linhas:</p>
+<div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="kt">Vendedor</span><span class="w"> </span><span class="kt">João</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">FILTER</span><span class="p">(</span><span class="kt">Vendas</span><span class="p">,</span><span class="w"> </span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Vendedor</span><span class="p">]</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;João&quot;</span><span class="p">,</span><span class="w"> </span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Ano</span><span class="p">]</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;2022&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="kt">Vendedor</span><span class="w"> </span><span class="kt">João</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">FILTER</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">Vendas</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Vendedor</span><span class="p">]</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;João&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Ano</span><span class="p">]</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;2022&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Estes dois comandos são idênticos. A identação utilizada (ou seja, separar em diversas linhas e alinhar os elementos
+verticalmente) é utilizada apenas para facilitar a leitura por programadores. O computador é indiferente a este tipo
+de formatação.</p>
+</div>
+<section id="id2">
+<h3><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/filter-function-dax">FILTER</a><a class="headerlink" href="#id2" title="Link permanente para este cabeçalho">¶</a></h3>
+<p>Utilizada para retornar um subconjunto de uma tabela. A função FILTER filtra uma tabela de acordo os critérios de
+interesse.</p>
+<div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="kt">Vendedor</span><span class="w"> </span><span class="kt">João</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">FILTER</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">Vendas</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Vendedor</span><span class="p">]</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;João&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Ano</span><span class="p">]</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;2022&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>O primeiro parâmetro <code class="docutils literal notranslate"><span class="pre">Vendas</span></code> indica a tebela que contém as vendas de todos os vendedores;</p></li>
+<li><p>O segundo parâmetro <code class="docutils literal notranslate"><span class="pre">Vendas[Vendedor]=&quot;João&quot;</span></code> retorna somente o vendedor João;</p></li>
+<li><p>O terceiro parâmetro <code class="docutils literal notranslate"><span class="pre">Vendas[Ano]=&quot;2022&quot;</span></code> retorna somente o ano de 2022;</p></li>
+<li><p>O resultado é um subconjunto de dados que contém somente a vendas realizadas por João no ano de 2022.</p></li>
+</ul>
 </section>
 <section id="id3">
 <h3><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/all-function-dax">ALL</a><a class="headerlink" href="#id3" title="Link permanente para este cabeçalho">¶</a></h3>
-<p>Utilizada para retornar todas as linhas de uma tabela ou valores em uma coluna, ignorando qualquer filtro que tenha sido aplicado.</p>
-<div class="highlight-dax notranslate"><div class="highlight"><pre><span></span><span class="nf">ALL</span><span class="w"> </span><span class="p">(</span>&lt;tabela&gt; ou &lt;coluna&gt;)
+<p>Utilizada para retornar todas as linhas de uma tabela ou valores em uma coluna, ignorando qualquer filtro que tenha
+sido aplicado. Assim como a função FILTER, esta função não é utilizada por si só, sempre estando acompanhada de outra
+função.</p>
+<div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="kt">Vendas</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">todos</span><span class="w"> </span><span class="n">os</span><span class="w"> </span><span class="n">vendedores</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">CALCULATE</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">SUM</span><span class="p">(</span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Valor</span><span class="p">]),</span>
+<span class="w">    </span><span class="kt">ALL</span><span class="p">(</span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Vendedor</span><span class="p">])</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>Assim como a função FILTER, esta função não é utilizada por si só, sempre estando acompanhada de outra função.</p>
+<p>Neste exemplo, o resultado será sempre a soma total das vendas independente do vendedor que for filtrado no relatório.</p>
 </section>
 <section id="id4">
 <h3><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/related-function-dax">RELATED</a><a class="headerlink" href="#id4" title="Link permanente para este cabeçalho">¶</a></h3>
 <p>Retorna um valor relacionado de outra tabela.</p>
-<div class="highlight-dax notranslate"><div class="highlight"><pre><span></span>Qtde Vendas SP = COUNTROWS(
-<span class="w">    </span><span class="nf">FILTER</span><span class="p">(</span>
-<span class="w">        </span><span class="nf">ALL</span><span class="p">(</span>Vendas);
-<span class="w">        </span><span class="nf">RELATED</span><span class="p">(</span><span class="na">Local[Cidade]</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;São Paulo&quot;</span>
+<div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="kt">Qtd</span><span class="w"> </span><span class="kt">Vendas</span><span class="w"> </span><span class="kt">SP</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">COUNTROWS</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">FILTER</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">ALL</span><span class="p">(</span><span class="kt">Vendas</span><span class="p">),</span>
+<span class="w">        </span><span class="kt">RELATED</span><span class="p">(</span><span class="kt">Local</span><span class="p">[</span><span class="kt">Cidade</span><span class="p">])</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;São Paulo&quot;</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
+<p>Esta medida calcula a quantidade de vendas em São Paulo com base na relação entre as tabelas Vendas e Local da seguinte
+forma:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">COUNTROWS</span></code>: conta o número de linhas de uma tabela;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FILTER</span></code>: permite filtrar uma tabela com base em uma condição específica;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALL(Vendas)</span></code>: remove todos os filtros da tabela Vendas, garantindo que consideraremos todas as linhas;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RELATED(Local[Cidade])</span> <span class="pre">=</span> <span class="pre">&quot;São</span> <span class="pre">Paulo&quot;</span></code>: é usado para recuperar os valores de São Paulo na coluna Cidade da tabela
+local.</p></li>
+</ul>
+<p>Portanto, esta é a condição de filtro que verifica se a cidade relacionada é igual a “São Paulo”.</p>
 </section>
 <section id="totalytd-totalqtd-totalmtd">
 <h3><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/totalytd-function-dax">TOTALYTD</a> / <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/totalqtd-function-dax">TOTALQTD</a> / <a class="reference external" href="https://learn.microsoft.com/pt-br/dax/totalmtd-function-dax">TOTALMTD</a><a class="headerlink" href="#totalytd-totalqtd-totalmtd" title="Link permanente para este cabeçalho">¶</a></h3>
 <p>Com estas funções, é possível utilizar dados temporais para retornar dados, como coletar o dia, mês, trimestre, ano, etc
 de uma coluna com data. Também é possível comparar períodos.</p>
-<div class="highlight-dax notranslate"><div class="highlight"><pre><span></span>Total Vendas Ano = TOTALYTD(
-<span class="w">    </span><span class="nf">SUM</span><span class="p">(</span><span class="na">Vendas[Valor]</span><span class="p">)</span>;
-<span class="w">    </span><span class="na">Calendario[Datas]</span>
+<div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="kt">Total</span><span class="w"> </span><span class="kt">Vendas</span><span class="w"> </span><span class="kt">Ano</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">TOTALYTD</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">SUM</span><span class="p">(</span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Valor</span><span class="p">]),</span>
+<span class="w">    </span><span class="kt">Calendario</span><span class="p">[</span><span class="kt">Datas</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -128,9 +172,9 @@ de uma coluna com data. Também é possível comparar períodos.</p>
 <section id="id5">
 <h3><a class="reference external" href="https://learn.microsoft.com/pt-br/dax/calculate-function-dax">CALCULATE</a><a class="headerlink" href="#id5" title="Link permanente para este cabeçalho">¶</a></h3>
 <p>Avalia uma expressão em um contexto que pode ser mudado por filtros específicos.</p>
-<div class="highlight-dax notranslate"><div class="highlight"><pre><span></span>Vendas Todas Cidades = CALCULATE(
-<span class="w">    </span><span class="nf">SUM</span><span class="p">(</span><span class="na">Vendas[Valor]</span><span class="p">)</span>;
-<span class="w">    </span><span class="nf">ALL</span><span class="p">(</span><span class="na">Local[Cidade]</span><span class="p">)</span>
+<div class="highlight-haskell notranslate"><div class="highlight"><pre><span></span><span class="kt">Vendas</span><span class="w"> </span><span class="kt">Todas</span><span class="w"> </span><span class="kt">Cidades</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">CALCULATE</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">SUM</span><span class="p">(</span><span class="kt">Vendas</span><span class="p">[</span><span class="kt">Valor</span><span class="p">]),</span>
+<span class="w">    </span><span class="kt">ALL</span><span class="p">(</span><span class="kt">Local</span><span class="p">[</span><span class="kt">Cidade</span><span class="p">])</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -208,7 +252,7 @@ Uma lista não-extensiva dos tipos de funções seria:</p>
   <div>
     <h4>Próximo tópico</h4>
     <p class="topless"><a href="gr%C3%A1ficos.html"
-                          title="próximo capítulo">Tipos de Gráficos</a></p>
+                          title="próximo capítulo">Gráficos</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>Essa Página</h3>
@@ -238,7 +282,7 @@ Uma lista não-extensiva dos tipos de funções seria:</p>
           <a href="../genindex.html" title="Índice Geral"
              >índice</a></li>
         <li class="right" >
-          <a href="gr%C3%A1ficos.html" title="Tipos de Gráficos"
+          <a href="gr%C3%A1ficos.html" title="Gráficos"
              >próximo</a> |</li>
         <li class="right" >
           <a href="carga.html" title="Carga de dados"

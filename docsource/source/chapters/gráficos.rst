@@ -25,6 +25,9 @@ de gráfico diferente é mais adequado. Você pode ler uma descrição breve, be
 diferentes tipos de gráfico do Power BI na
 `Documentação oficial <https://learn.microsoft.com/pt-br/power-bi/visuals/power-bi-visualization-types-for-reports-and-q-and-a>`_.
 
+O site `The Data Visualization Catalogue <https://datavizcatalogue.com/>`_ apresenta uma listagem de gráficos disponíveis
+(não apenas para o Power BI) e quais os melhores casos de uso para cada um deles.
+
 Densidade de informações
 ------------------------
 
@@ -60,3 +63,4 @@ Bibliografia
 * `Ferramenta interativa para escolha do tipo de gráfico <https://app.powerbi.com/view?r=eyJrIjoiYThhMjI1OWEtZWU4My00MmQ4LWJiYjctNTc5YzVlMDdiMDBkIiwidCI6IjdkNWZlMmNlLTA3M2QtNGVmMC05Y2RkLWNhZGRjMjU5Zjc3OCJ9>`_
 * `Paleta de cores online <https://coolors.co/>`_
 * `Ferramenta para calibrar cores para pessoas com deficiência visual <https://projects.susielu.com/viz-palette>`_
+* `The Data Visualization Catalogue <https://datavizcatalogue.com/>`_

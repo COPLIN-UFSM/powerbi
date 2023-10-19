@@ -43,39 +43,88 @@ Existe um conjunto de funções do DAX que são mais frequentemente usadas do qu
 `documentação oficial <https://learn.microsoft.com/pt-br/dax/dax-function-reference>`_ da Microsoft para uma lista
 completa de todas as funções.
 
+.. note::
+
+    As vezes você perceberá que alguns comandos estão escritos em uma linha apenas, enquanto outros estão divididos em
+    múltiplas linhas:
+
+    .. code-block:: haskell
+
+        Vendedor João = FILTER(Vendas, Vendas[Vendedor] = "João", Vendas[Ano] = "2022")
+
+    .. code-block:: haskell
+    
+        Vendedor João = FILTER(
+            Vendas,
+            Vendas[Vendedor] = "João",
+            Vendas[Ano] = "2022"
+        )
+
+    Estes dois comandos são idênticos. A identação utilizada (ou seja, separar em diversas linhas e alinhar os elementos
+    verticalmente) é utilizada apenas para facilitar a leitura por programadores. O computador é indiferente a este tipo
+    de formatação.
+
+
 `FILTER <https://learn.microsoft.com/pt-br/dax/filter-function-dax>`_
 *********************************************************************
 
-Utilizada para retornar um subconjunto de uma tabela ou expressão.
+Utilizada para retornar um subconjunto de uma tabela. A função FILTER filtra uma tabela de acordo os critérios de
+interesse.
 
-.. code-block:: dax
+.. code-block:: haskell
 
-    FILTER (<tabela>, <filtro>)
+    Vendedor João = FILTER(
+        Vendas,
+        Vendas[Vendedor] = "João",
+        Vendas[Ano] = "2022"
+    )
+
+* O primeiro parâmetro ``Vendas`` indica a tebela que contém as vendas de todos os vendedores;
+* O segundo parâmetro ``Vendas[Vendedor]="João"`` retorna somente o vendedor João;
+* O terceiro parâmetro ``Vendas[Ano]="2022"`` retorna somente o ano de 2022;
+* O resultado é um subconjunto de dados que contém somente a vendas realizadas por João no ano de 2022.
 
 `ALL <https://learn.microsoft.com/pt-br/dax/all-function-dax>`_
 ***************************************************************
 
-Utilizada para retornar todas as linhas de uma tabela ou valores em uma coluna, ignorando qualquer filtro que tenha sido aplicado.
+Utilizada para retornar todas as linhas de uma tabela ou valores em uma coluna, ignorando qualquer filtro que tenha
+sido aplicado. Assim como a função FILTER, esta função não é utilizada por si só, sempre estando acompanhada de outra
+função.
 
-.. code-block:: dax
+.. code-block:: haskell
 
-    ALL (<tabela> ou <coluna>)
+    Vendas de todos os vendedores = CALCULATE(
+        SUM(Vendas[Valor]),
+        ALL(Vendas[Vendedor])
+    )
 
-Assim como a função FILTER, esta função não é utilizada por si só, sempre estando acompanhada de outra função.
+Neste exemplo, o resultado será sempre a soma total das vendas independente do vendedor que for filtrado no relatório.
+
 
 `RELATED <https://learn.microsoft.com/pt-br/dax/related-function-dax>`_
 ***********************************************************************
 
 Retorna um valor relacionado de outra tabela.
 
-.. code-block:: dax
+.. code-block:: haskell
 
-    Qtde Vendas SP = COUNTROWS(
+    Qtd Vendas SP = COUNTROWS(
         FILTER(
-            ALL(Vendas);
+            ALL(Vendas),
             RELATED(Local[Cidade]) = "São Paulo"
         )
     )
+
+Esta medida calcula a quantidade de vendas em São Paulo com base na relação entre as tabelas Vendas e Local da seguinte
+forma:
+
+* ``COUNTROWS``: conta o número de linhas de uma tabela;
+* ``FILTER``: permite filtrar uma tabela com base em uma condição específica;
+* ``ALL(Vendas)``: remove todos os filtros da tabela Vendas, garantindo que consideraremos todas as linhas;
+* ``RELATED(Local[Cidade]) = "São Paulo"``: é usado para recuperar os valores de São Paulo na coluna Cidade da tabela
+  local.
+
+Portanto, esta é a condição de filtro que verifica se a cidade relacionada é igual a "São Paulo".
 
 
 `TOTALYTD <https://learn.microsoft.com/pt-br/dax/totalytd-function-dax>`_ / `TOTALQTD <https://learn.microsoft.com/pt-br/dax/totalqtd-function-dax>`_ / `TOTALMTD <https://learn.microsoft.com/pt-br/dax/totalmtd-function-dax>`_
@@ -84,10 +133,10 @@ Retorna um valor relacionado de outra tabela.
 Com estas funções, é possível utilizar dados temporais para retornar dados, como coletar o dia, mês, trimestre, ano, etc
 de uma coluna com data. Também é possível comparar períodos.
 
-.. code-block:: dax
+.. code-block:: haskell
 
     Total Vendas Ano = TOTALYTD(
-        SUM(Vendas[Valor]);
+        SUM(Vendas[Valor]),
         Calendario[Datas]
     )
 
@@ -97,10 +146,10 @@ de uma coluna com data. Também é possível comparar períodos.
 
 Avalia uma expressão em um contexto que pode ser mudado por filtros específicos.
 
-.. code-block:: dax
+.. code-block:: haskell
 
     Vendas Todas Cidades = CALCULATE(
-        SUM(Vendas[Valor]);
+        SUM(Vendas[Valor]),
         ALL(Local[Cidade])
     )
 
