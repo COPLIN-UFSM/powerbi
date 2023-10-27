@@ -19,6 +19,7 @@ Bem vindo ao curso de Capacitação em Power BI da Universidade Federal de Santa
    chapters/carga
    chapters/métricas
    chapters/gráficos
+   chapters/estilo
    chapters/activities/index
 
 
