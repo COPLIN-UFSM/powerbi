@@ -187,7 +187,7 @@ Tarefa
 ------
 
 Considerando a tabela `iestudantes.csv
-<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
+<https://coplin-ufsm.github.io/powerbi/data/pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
 crie uma métrica para somar o número de alunos que pertencem a cada uma das categorias.
 
 Bibliografia
