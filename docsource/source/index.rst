@@ -26,6 +26,4 @@ Bem vindo ao curso de Capacitação em Power BI da Universidade Federal de Santa
 Índices e Tabelas
 =================
 
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

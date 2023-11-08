@@ -17,7 +17,7 @@ Tarefa
 ------
 
 Faça download da tabela `iestudantes.csv
-<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_ no seu computador, e abrindo-a
+<https://coplin-ufsm.github.io/powerbi/data/pessoal/Base%20de%20Dados/iestudantes.csv>`_ no seu computador, e abrindo-a
 em um editor de planilhas (Power Query, Microsoft Excel, Libreoffice Calc ou outro), inspecione as colunas e responda se
 a tabela atende às seguintes demandas:
 
