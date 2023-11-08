@@ -10,7 +10,8 @@ outros.
 
 Nós disponibilizamos um tutorial de como customizar a aparência no
 `seguinte link <https://coplin-ufsm.github.io/powerbi/data/outros/tutorial_adicionar_estilo.pdf>`_. Este tutorial também
-está disponível na seção abaixo.
+está disponível na seção abaixo, mas pode ser difícil visualizar dependendo da tela do seu computador. Por isso,
+recomendados acessar o tutorial no link acima.
 
 Inserir plano de fundo
 -------------------------------------------

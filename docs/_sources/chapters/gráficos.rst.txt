@@ -60,7 +60,7 @@ Tarefa
 ------
 
 Considerando a tabela `iestudantes.csv
-<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
+<https://coplin-ufsm.github.io/powerbi/data/pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
 qual o melhor tipo de gráfico para mostrar os alunos agrupados por gênero?
 
 Bibliografia

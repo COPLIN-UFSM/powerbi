@@ -33,7 +33,7 @@ Tarefa
 ------
 
 Considerando a tabela `iestudantes.csv
-<https://coplin-ufsm.github.io/powerbi/data/Pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
+<https://coplin-ufsm.github.io/powerbi/data/pessoal/Base%20de%20Dados/iestudantes.csv>`_, e utilizando o Power BI,
 `crie dois grupos <https://learn.microsoft.com/pt-br/power-bi/create-reports/desktop-grouping-and-binning>`_ para
 visualização: Brasileiro e Estrangeiro.
 
