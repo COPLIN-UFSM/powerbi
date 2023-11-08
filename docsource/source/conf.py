@@ -20,6 +20,7 @@
 project = 'Capacitação em Power BI da UFSM'
 copyright = '2023, COPLIN'
 author = 'COPLIN'
+master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'
@@ -48,6 +49,15 @@ language = 'pt_BR'
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+latex_engine = 'pdflatex'
+
+latex_elements = {
+     'babel': r'\usepackage[brazil]{babel}'
+}
+
+latex_documents = [
+    (master_doc, 'main.tex', 'Power BI', 'COPLIN', 'manual'),
+]
 
 # -- Options for HTML output -------------------------------------------------
 
