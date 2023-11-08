@@ -35,7 +35,6 @@ a tabela atende às seguintes demandas:
    * |uncheck| Por cota
    * |uncheck| Por curso
    * |uncheck| Por centro
-   * |uncheck| se é refugiado ou não
 
 #. Regularmente matriculados
 
@@ -44,7 +43,6 @@ a tabela atende às seguintes demandas:
    * |uncheck| Por cota
    * |uncheck| Por curso
    * |uncheck| Por centro
-   * |uncheck| se é refugiado ou não
 
 #. Egressos
 
@@ -53,7 +51,6 @@ a tabela atende às seguintes demandas:
    * |uncheck| Por cota
    * |uncheck| Por curso
    * |uncheck| Por centro
-   * |uncheck| se é refugiado ou não
 
 **Relacionar os cursos...**
 

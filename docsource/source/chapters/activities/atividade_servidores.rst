@@ -41,9 +41,25 @@ abrindo-a No Power BI, faça um relatório com os seguintes itens:
 Solução
 -------
 
-#. Carregar dados
-#. Colocar primeira linha como cabeçalho
-#. Converter colunas numéricas para números inteiros
-#. Criar medidas
-#. Criar gráficos
-#. Criar seletor
+.. |solution| raw:: html
+
+    <details>
+    <summary><b>Clique para expandir</b></summary>
+    <ol>
+    <li>Carregar dados</li>
+    <li>Colocar primeira linha como cabeçalho</li>
+    <li>Converter colunas numéricas para números inteiros</li>
+    <li>Criar medidas</li>
+    <li>Criar gráficos</li>
+    <li>Criar seletor</li>
+    </ol>
+    </details>
+
+|solution|
+
+
+
+
+
+
+

@@ -23,7 +23,7 @@ Bem vindo ao curso de Capacitação em Power BI da Universidade Federal de Santa
    chapters/activities/index
 
 
-Índices e Tabelas
-=================
+Busca
+=====
 
 * :ref:`search`
