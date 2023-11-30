@@ -100,11 +100,13 @@ apoio, bem como um relatório do Power BI inicial e completo:
 * `Relatório final <https://coplin-ufsm.github.io/powerbi/data/outros/Relatórios/Adicionando%20estilo%20(final).pbix>`_
 * `Plano de fundo <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Background/Fundo%20UFSM.svg>`_
 * Cartões
+
   * `Cartão docentes <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Cartões/Cartão%20DOCENTES.svg>`_
   * `Cartão estudantes <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Cartões/Cartão%20ESTUDANTES.svg>`_
   * `cartão TAEs <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Cartões/Cartão%20TAES.svg>`_
 * Ícones
-  * `Ícone docente <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%20DOCENTE.svg>`_
-  * `Ícone estudante <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%20ESTUDANTE.svg>`_
-  * `Ícone TAE <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%20TAE.svg>`_
+
+  * `Ícone docente <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%20DOCENTE.png>`_
+  * `Ícone estudante <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%20ESTUDANTE.png>`_
+  * `Ícone TAE <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%20TAE.png>`_
 * `Tema UFSM <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Temas/Tema%20UFSM.json>`_
