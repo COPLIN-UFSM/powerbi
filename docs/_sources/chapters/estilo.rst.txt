@@ -97,8 +97,14 @@ apoio, bem como um relatório do Power BI inicial e completo:
 
 * `Tutorial <https://coplin-ufsm.github.io/powerbi/data/outros/tutorial_adicionar_estilo_2.pdf>`_
 * `Relatório inicial <https://coplin-ufsm.github.io/powerbi/data/outros/Relatórios/Adicionando%20estilo%20(inicial).pbix>`_
-* `Relatório final <https://coplin-ufsm.github.io/powerbi/data/outros/Relatórios/Adicionando%20estilo%20(final).pbix>`_
-* `Planos de fundo <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Background>`_
-* `Cartões <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Cartões>`_
-* `Botões <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Botões>`_
-* `Temas <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Temas>`_
+* `Relatório final <https://coplin-ufsm.github.io/powerbi/data/outros/Relatórios/Adicionando%20estilo%20(Final).pbix>`_
+* `Plano de fundo <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Background/Fundo%20UFSM.svg>`_
+* Cartões
+    * `Cartão docentes <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Cartões/Cartão%20DOCENTES.svg>`_
+    * `Cartão estudantes <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Cartões/Cartão%ESTUDANTES.svg>`_
+    * `cartão TAEs <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Cartões/Cartão%TAES.svg>`_
+* Ícones
+    * `Ícone docente <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%20DOCENTE.svg>`_
+    * `Ícone estudante <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%ESTUDANTE.svg>`_
+    * `Ícone TAE <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Ícones/Ícone%TAE.svg>`_
+* `Tema UFSM <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Temas/Tema%20UFSM.json>`_
