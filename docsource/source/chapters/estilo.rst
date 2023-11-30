@@ -14,7 +14,7 @@ está disponível na seção abaixo, mas pode ser difícil visualizar dependendo
 recomendados acessar o tutorial no link acima.
 
 Inserir plano de fundo
--------------------------------------------
+----------------------
 
 
 .. image:: ../../../docs/data/outros/estilo/passo_1.jpg
@@ -87,3 +87,18 @@ Esta ferramenta permite adicionar um cartão com fundo ajustável.
 
 .. image:: ../../../docs/data/outros/estilo/passo_15.jpg
   :width: 100%
+
+
+Material de apoio
+-----------------
+
+Também disponibilizamos um segundo passo-a-passo de como adicionar botões, cartões, e plano de fundo no material de
+apoio, bem como um relatório do Power BI inicial e completo:
+
+* `Tutorial <https://coplin-ufsm.github.io/powerbi/data/outros/tutorial_adicionar_estilo_2.pdf>`_
+* `Relatório inicial <https://coplin-ufsm.github.io/powerbi/data/outros/Relatórios/Adicionando%20estilo%20(inicial).pbix>`_
+* `Relatório final <https://coplin-ufsm.github.io/powerbi/data/outros/Relatórios/Adicionando%20estilo%20(final).pbix>`_
+* `Planos de fundo <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Background>`_
+* `Cartões <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Cartões>`_
+* `Botões <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Botões>`_
+* `Temas <https://coplin-ufsm.github.io/powerbi/data/outros/Assets/Temas>`_
