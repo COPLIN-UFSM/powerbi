@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Carga de dados &#8212; documentação Capacitação em Power BI da UFSM 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="Métricas" href="m%C3%A9tricas.html" />
+    <link rel="prev" title="Transformação" href="transforma%C3%A7%C3%A3o.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="m%C3%A9tricas.html" title="Métricas"
+             accesskey="N">próximo</a> |</li>
+        <li class="right" >
+          <a href="transforma%C3%A7%C3%A3o.html" title="Transformação"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Capacitação em Power BI da UFSM 0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Carga de dados</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="carga-de-dados">
+<span id="carga"></span><h1>Carga de dados<a class="headerlink" href="#carga-de-dados" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>Após a extração e a transformação, a carga de dados consiste em carregá-los propriamente para o Power BI. Após a carga,
+entende-se que os dados estão prontos para serem consumidos da maneira como se apresentam.</p>
+<p>Ao carregar os dados, estes passam a fazer parte de um <em>dataset</em>. Este <em>dataset</em> pode ser consumido por diversos
+<em>relatórios</em>, ou então apenas por um, a depender dos casos de uso.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A carga que nos referimos aqui é do modelo ETL (<em>extraction - transformation - load</em>), e não necessariamente a
+carga feita no Power BI.</p>
+</div>
+<p>Pode ser que, após fazer a carga, você perceba que faltou realizar algum pré-processamento (transformação) nos dados.
+É possível então realizar esta etapa utilizando o editor Power Query, interno ao Power BI. As modificações feitas serão
+imediatamente aplicadas e os dados serão recarregados automaticamente.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Quando carregamos uma planilha ou um banco de dados no Power BI, estamos fazendo uma <strong>carga</strong> (do modelo ETL) de
+dados. Logo após a carga, podemos transformar os dados ou consumi-los da maneira como se apresentam. No Power BI, os
+dados ainda poderão ser transformados mesmo depois de feita a carga.</p>
+<p>Assim, o Power BI aborda a transformação e carga de dados de maneira iterativa, onde as duas etapas podem ser
+revisitadas quantas vezes forem necessárias.</p>
+<p>O Power BI não faz extração de dados.</p>
+</div>
+<section id="tarefa">
+<h2>Tarefa<a class="headerlink" href="#tarefa" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Considerando a tabela <a class="reference external" href="https://coplin-ufsm.github.io/powerbi/data/pessoal/Base%20de%20Dados/iestudantes.csv">iestudantes.csv</a>, e utilizando o Power BI,
+<a class="reference external" href="https://learn.microsoft.com/pt-br/power-bi/create-reports/desktop-grouping-and-binning">crie dois grupos</a> para
+visualização: Brasileiro e Estrangeiro.</p>
+</section>
+<section id="bibliografia">
+<h2>Bibliografia<a class="headerlink" href="#bibliografia" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Na documentação
+<a class="reference external" href="https://learn.microsoft.com/pt-br/power-bi/connect-data/desktop-data-sources">Fontes de dados no Power BI Desktop</a>
+são listadas as diversas fontes disponíveis para carregar dados para o Power BI.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Tabela de Conteúdo</a></h3>
+<p class="caption" role="heading"><span class="caption-text">Sumário</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introdu%C3%A7%C3%A3o.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instala%C3%A7%C3%A3o.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extra%C3%A7%C3%A3o.html">Extração de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transforma%C3%A7%C3%A3o.html">Transformação</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Carga de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="m%C3%A9tricas.html">Métricas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gr%C3%A1ficos.html">Gráficos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estilo.html">Estilo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities/index.html">Atividades</a></li>
+</ul>
+
+  <div>
+    <h4>Tópico anterior</h4>
+    <p class="topless"><a href="transforma%C3%A7%C3%A3o.html"
+                          title="capítulo anterior">Transformação</a></p>
+  </div>
+  <div>
+    <h4>Próximo tópico</h4>
+    <p class="topless"><a href="m%C3%A9tricas.html"
+                          title="próximo capítulo">Métricas</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Essa Página</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/chapters/carga.rst.txt"
+            rel="nofollow">Exibir Fonte</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="right" >
+          <a href="m%C3%A9tricas.html" title="Métricas"
+             >próximo</a> |</li>
+        <li class="right" >
+          <a href="transforma%C3%A7%C3%A3o.html" title="Transformação"
+             >anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Capacitação em Power BI da UFSM 0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Carga de dados</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, COPLIN.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>

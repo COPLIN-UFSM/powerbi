@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Transformação &#8212; documentação Capacitação em Power BI da UFSM 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="Carga de dados" href="carga.html" />
+    <link rel="prev" title="Extração de dados" href="extra%C3%A7%C3%A3o.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="carga.html" title="Carga de dados"
+             accesskey="N">próximo</a> |</li>
+        <li class="right" >
+          <a href="extra%C3%A7%C3%A3o.html" title="Extração de dados"
+             accesskey="P">anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Capacitação em Power BI da UFSM 0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Transformação</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="transformacao">
+<span id="id1"></span><h1>Transformação<a class="headerlink" href="#transformacao" title="Link permanente para este cabeçalho">¶</a></h1>
+<p>A <strong>transformação</strong> é a etapa em que os dados extraídos seu formato prévio são convertidos para um formato que facilita
+o trabalho. Posto de outra forma, o objetivo desta etapa é <strong>“limpá-los”</strong> de maneira que a qualidade dos dados seja
+melhorada.</p>
+<p>É possível transformar os dados em duas etapas: antes do seu carregamento no Power BI, utilizando editores de planilhas
+como o Microsoft Excel, Libreoffice Calc, ou uma linguagem de programação com Python; ou então no próprio Power BI,
+através do editor Power Query.</p>
+<p>Independente da ferramenta utilizada, a transformação de dados consiste em:</p>
+<ul class="simple">
+<li><p>Adicionar ou remover linhas e colunas;</p></li>
+<li><p>Substituir valores faltantes;</p></li>
+<li><p>Categorizar dados (e.g. de números para intervalo de valores, como por exemplo faixas etárias);</p></li>
+<li><p>Alterar o tipo dos dados (e.g. de texto para uma data, ou de texto para um número);</p></li>
+<li><p>Adicionar uma coluna que é o cálculo de outras colunas, utilizando funções;</p></li>
+<li><p>Remover dados duplicados;</p></li>
+<li><p>Identificar e remover valores fora de um intervalo, como oriundos de erros de digitação;</p></li>
+<li><p>Dividir uma planilha em outras menores;</p></li>
+<li><p>Dentre outras tarefas.</p></li>
+</ul>
+<p>A documentação
+<a class="reference external" href="https://learn.microsoft.com/pt-br/power-bi/transform-model/desktop-query-overview">Visão geral de Consulta no Power BI Desktop</a>
+e o tutorial <a class="reference external" href="https://learn.microsoft.com/pt-br/power-bi/connect-data/desktop-shape-and-combine-data">Formatar e combinar dados no Power BI Desktop</a>
+fornecem instruções passo-a-passo do processo de transformação dos dados diretamente no Editor Power Query.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se você optar por transformar os dados no Power Query, as modificações feitas não serão refletidas nas fontes de
+dados. Em outras palavras, se você deletar uma coluna no Power Query, por exemplo, esta coluna ainda estará presente
+na planilha do Excel da qual os dados foram extraídos.</p>
+</div>
+<section id="tarefa">
+<h2>Tarefa<a class="headerlink" href="#tarefa" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>Considerando a tabela <a class="reference external" href="https://coplin-ufsm.github.io/powerbi/data/pessoal/Base%20de%20Dados/iestudantes.csv">iestudantes.csv</a>, e utilizando o Power Query,
+transforme a coluna <strong>Nacionalidade</strong> de gentílico (e.g. brasileiro, peruano, etc) para o nome do país (e.g. Brasil,
+Peru, etc).</p>
+</section>
+<section id="bibliografia">
+<h2>Bibliografia<a class="headerlink" href="#bibliografia" title="Link permanente para este cabeçalho">¶</a></h2>
+<p>A Microsoft apresenta um roteiro de aprendizagem para transformação de dados em seus
+<a class="reference external" href="https://learn.microsoft.com/pt-br/training/paths/prepare-data-power-bi/">Roteiros de Aprendizagem</a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Tabela de Conteúdo</a></h3>
+<p class="caption" role="heading"><span class="caption-text">Sumário</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introdu%C3%A7%C3%A3o.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instala%C3%A7%C3%A3o.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extra%C3%A7%C3%A3o.html">Extração de dados</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Transformação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carga.html">Carga de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="m%C3%A9tricas.html">Métricas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gr%C3%A1ficos.html">Gráficos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="estilo.html">Estilo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activities/index.html">Atividades</a></li>
+</ul>
+
+  <div>
+    <h4>Tópico anterior</h4>
+    <p class="topless"><a href="extra%C3%A7%C3%A3o.html"
+                          title="capítulo anterior">Extração de dados</a></p>
+  </div>
+  <div>
+    <h4>Próximo tópico</h4>
+    <p class="topless"><a href="carga.html"
+                          title="próximo capítulo">Carga de dados</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Essa Página</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/chapters/transformação.rst.txt"
+            rel="nofollow">Exibir Fonte</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="right" >
+          <a href="carga.html" title="Carga de dados"
+             >próximo</a> |</li>
+        <li class="right" >
+          <a href="extra%C3%A7%C3%A3o.html" title="Extração de dados"
+             >anterior</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">documentação Capacitação em Power BI da UFSM 0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Transformação</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, COPLIN.
+      Criada usando <a href="https://www.sphinx-doc.org/pt_BR/master">Sphinx</a> 5.0.2.
+    </div>
+  </body>
+</html>
