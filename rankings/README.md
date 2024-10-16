@@ -1,19 +1,7 @@
 # Rankings
 
-Os relatórios de rankings possuem uma identidade visual própria, com **duas páginas.**
+Os relatórios de rankings possuem uma identidade visual própria, os **templates** dos fundos estão disponíveis no arquivo do Figma abaixo:
+* [Arquivo Figma] (https://www.figma.com/design/UGaCBZQGK1aepdh5vIqEXz/Templates-BI?node-id=918-2268&node-type=canvas&t=GD0xtYo6y7Lhj0rd-0)
 
-Na **primeira**, mostraremos uma **visão geral**, com a posição da UFSM no mundo, na América Latina, no Brasil, no Rio Grande do Sul e entre as federais. 
-
-Na **segunda página** precisamos detalhar de acordo com as **características** de cada ranking. Pode ser um detalhamento por pilar, por mátéria, por área de conhecimento. São inúmeras as classificações existentes. Mas a regra geral é sempre comparar a posição da UFSM em relação às universidades da América Latina, do Brasil, do Rio Grande do Sul e entre as federais.
-
-## Identidade visual
-
-A identidade visual dos rankings é dada como nas figuras abaixo.
-
-### Primeira página
-
-![Prancheta 2](https://github.com/COPLIN-UFSM/powerbi/assets/137929203/e9deed0f-6d8e-4ccb-a2cc-ddd72746efb9)
-
-### Segunda página
-
-![Prancheta 1](https://github.com/COPLIN-UFSM/powerbi/assets/137929203/c549575b-2dcb-4b13-8488-3c7104076a86)
+O relatório com os rankings está no workspace da Coplin:
+* [Relatório Rankings] (https://app.powerbi.com/reportEmbed?reportId=cf5c2485-194b-4c95-a6a1-588de4c918d4&autoAuth=true&ctid=979020d5-4950-4f43-a994-88d683eab473)
